@@ -2,5 +2,5 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
-# require "./app"
-# run App
+require "./app"
+run App
