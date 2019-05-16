@@ -10,11 +10,11 @@ def client
   }
 end
 
-get '/' do
-    'Hello world!'
-  end
+    # get '/' do
+    #   'Hello world!'
+    # end
 
-  post '/callback' do
+    post '/callback' do
     body = request.body.read
 
     signature = request.env['HTTP_X_LINE_SIGNATURE']
@@ -23,7 +23,6 @@ get '/' do
     end
 
     events = client.parse_events_from(body)
-
     events.each do |event|
       case event
       when Line::Bot::Event::Message
@@ -42,5 +41,7 @@ get '/' do
     'OK'
     end
   end
+
+  
   
 # app.rb
