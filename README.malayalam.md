@@ -1,13 +1,12 @@
-# Sinatra
+# സിനാട്ര
 
-[![Gem Version](https://badge.fury.io/rb/sinatra.svg)](http://badge.fury.io/rb/sinatra)
-[![Build Status](https://secure.travis-ci.org/sinatra/sinatra.svg)](https://travis-ci.org/sinatra/sinatra)
+[![gem വേർഷൻ ](https://badge.fury.io/rb/sinatra.svg)](http://badge.fury.io/rb/sinatra)
+[![ബിൽഡ് സ്റ്റാറ്റസ്](https://secure.travis-ci.org/sinatra/sinatra.svg)](https://travis-ci.org/sinatra/sinatra)
 [![SemVer](https://api.dependabot.com/badges/compatibility_score?dependency-name=sinatra&package-manager=bundler&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=sinatra&package-manager=bundler&version-scheme=semver)
 
-Sinatra is a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) for
-quickly creating web applications in Ruby with minimal effort:
+ വെബ് അപ്പ്ലിക്കേഷൻസ് എളുപ്പത്തിൽ ഉണ്ടാക്കാനുള്ള ഒരു ലൈബ്രറി [DSL](https://en.wikipedia.org/wiki/Domain-specific_language) ആണ്.:
 
-```ruby
+```റൂബി
 # myapp.rb
 require 'sinatra'
 
@@ -16,98 +15,97 @@ get '/' do
 end
 ```
 
-Install the gem:
+gem ഇൻസ്റ്റാൾ ചെയ്യുവാൻ:
 
 ```shell
 gem install sinatra
 ```
 
-And run with:
+റൺ ചെയ്യുവാൻ  :
 
-```shell
+```shell / ഷെൽ
 ruby myapp.rb
 ```
 
 View at: [http://localhost:4567](http://localhost:4567)
 
-The code you changed will not take effect until you restart the server.
-Please restart the server every time you change or use
+ സെർവർ വീണ്ടും സ്റ്റാർട്ട് ചെയ്യാതെ നിങ്ങളുടെ കോഡ് ചേഞ്ച് കാണാൻ സാധിക്കുകയില്ല
+കോഡ് ചേഞ്ച് ചെയ്യുമ്പോൾ സെർവർ വീണ്ടും സ്റ്റാർട്ട് ചെയ്യാൻ മറക്കരുത്
 [sinatra/reloader](http://www.sinatrarb.com/contrib/reloader).
 
-It is recommended to also run `gem install thin`, which Sinatra will
-pick up if available.
+എപ്പോഴും `gem install thin`,എന്ന് റൺ ചെയ്യുക ,  ഇത് ഏറ്റവും പുതിയ  അപ്ലിക്കേഷൻ സെലക്ട് ചെയ്യാൻ നമ്മളെ സഹായിക്കും .
 
-## Table of Contents
+## ഉള്ളടക്കം
 
-* [Sinatra](#sinatra)
-    * [Table of Contents](#table-of-contents)
-    * [Routes](#routes)
-    * [Conditions](#conditions)
-    * [Return Values](#return-values)
-    * [Custom Route Matchers](#custom-route-matchers)
-    * [Static Files](#static-files)
-    * [Views / Templates](#views--templates)
-        * [Literal Templates](#literal-templates)
-        * [Available Template Languages](#available-template-languages)
-            * [Haml Templates](#haml-templates)
-            * [Erb Templates](#erb-templates)
-            * [Builder Templates](#builder-templates)
-            * [Nokogiri Templates](#nokogiri-templates)
-            * [Sass Templates](#sass-templates)
-            * [SCSS Templates](#scss-templates)
-            * [Less Templates](#less-templates)
-            * [Liquid Templates](#liquid-templates)
-            * [Markdown Templates](#markdown-templates)
-            * [Textile Templates](#textile-templates)
-            * [RDoc Templates](#rdoc-templates)
-            * [AsciiDoc Templates](#asciidoc-templates)
-            * [Radius Templates](#radius-templates)
-            * [Markaby Templates](#markaby-templates)
-            * [RABL Templates](#rabl-templates)
-            * [Slim Templates](#slim-templates)
-            * [Creole Templates](#creole-templates)
-            * [MediaWiki Templates](#mediawiki-templates)
-            * [CoffeeScript Templates](#coffeescript-templates)
-            * [Stylus Templates](#stylus-templates)
-            * [Yajl Templates](#yajl-templates)
-            * [WLang Templates](#wlang-templates)
-        * [Accessing Variables in Templates](#accessing-variables-in-templates)
+* [സിനാട്ര](#sinatra)
+    * [ഉള്ളടക്കം](#table-of-contents)
+    * [റൂട്സ്](#routes)
+    * [കണ്ടിഷൻസ്](#conditions)
+    * [റിട്ടേൺ വാല്യൂസ്](#return-values)
+    * [കസ്റ്റമ് റൂട്ട് മടീച്ചേഴ്സ് ](#custom-route-matchers)
+    * [സ്റ്റാറ്റിക് files](#static-files)
+    * [വ്യൂസ് / ടെംപ്ലേറ്റ്സ്](#views--templates)
+        * [ലിറ്ററൽ ടെംപ്ലേറ്റ്സ്  ](#literal-templates)
+        * [ലഭ്യമായ ടെംപ്ലേറ്റ്സ് ഭാഷകൾ ](#available-template-languages)
+            * [Haml ടെംപ്ലേറ്റ്സ്](#haml-templates)
+            * [Erb ടെംപ്ലേറ്റ്സ്](#erb-templates)
+            * [Builder ടെംപ്ലേറ്റ്സ്](#builder-templates)
+            * [nokogiri ടെംപ്ലേറ്റ്സ്](#nokogiri-templates)
+            * [Sass ടെംപ്ലേറ്റ്സ്](#sass-templates)
+            * [SCSS ടെംപ്ലേറ്റ്സ്](#scss-templates)
+            * [Less ടെംപ്ലേറ്റ്സ്](#less-templates)
+            * [Liquid ടെംപ്ലേറ്റ്സ്](#liquid-templates)
+            * [Markdown ടെംപ്ലേറ്റ്സ്](#markdown-templates)
+            * [Textile ടെംപ്ലേറ്റ്സ്](#textile-templates)
+            * [RDoc ടെംപ്ലേറ്റ്സ്](#rdoc-templates)
+            * [AsciiDoc ടെംപ്ലേറ്റ്സ്](#asciidoc-templates)
+            * [Radius ടെംപ്ലേറ്റ്സ്](#radius-templates)
+            * [Markaby ടെംപ്ലേറ്റ്സ്](#markaby-templates)
+            * [RABL ടെംപ്ലേറ്റ്സ്](#rabl-templates)
+            * [Slim ടെംപ്ലേറ്റ്സ്](#slim-templates)
+            * [Creole ടെംപ്ലേറ്റ്സ്](#creole-templates)
+            * [MediaWiki ടെംപ്ലേറ്റ്സ്](#mediawiki-templates)
+            * [CoffeeScript ടെംപ്ലേറ്റ്സ്](#coffeescript-templates)
+            * [Stylus ടെംപ്ലേറ്റ്സ്](#stylus-templates)
+            * [Yajl ടെംപ്ലേറ്റ്സ്](#yajl-templates)
+            * [WLang ടെംപ്ലേറ്റ്സ്](#wlang-templates)
+        * [വാരിയബിൾസിനെ എടുക്കാൻ സഹായിക്കുന്ന  ടെംപ്ലേറ്റ്സ്](#accessing-variables-in-templates)
         * [Templates with `yield` and nested layouts](#templates-with-yield-and-nested-layouts)
-        * [Inline Templates](#inline-templates)
-        * [Named Templates](#named-templates)
+        * [Inline ടെംപ്ലേറ്റ്സ്](#inline-templates)
+        * [പേരുള്ള ടെംപ്ലേറ്റ്സ്](#named-templates)
         * [Associating File Extensions](#associating-file-extensions)
-        * [Adding Your Own Template Engine](#adding-your-own-template-engine)
+        * [നിങ്ങളുടെ സ്വന്തം ടെമ്പ്ലേറ്റ് എങ്ങിനെ ഉണ്ടാക്കാൻ സഹായിക്കുന്നു ](#adding-your-own-template-engine)
         * [Using Custom Logic for Template Lookup](#using-custom-logic-for-template-lookup)
     * [Filters](#filters)
     * [Helpers](#helpers)
-        * [Using Sessions](#using-sessions)
-            * [Session Secret Security](#session-secret-security)
+        * [സെഷൻസ് ഉപയോഗിക്കുന്നു ](#using-sessions)
+            * [രഹസ്യമായി സെഷൻസ് സംരക്ഷിക്കുക ](#session-secret-security)
             * [Session Config](#session-config)
-            * [Choosing Your Own Session Middleware](#choosing-your-own-session-middleware)
-        * [Halting](#halting)
+            * [സെഷൻ middlewate തിരഞ്ഞെടുക്കുക](#choosing-your-own-session-middleware)
+        * [ഹാൾട് ചെയ്യുക ](#halting)
         * [Passing](#passing)
-        * [Triggering Another Route](#triggering-another-route)
+        * [മറ്റൊരു റൂട്ട് ട്രിഗർ ചെയ്യുക ](#triggering-another-route)
         * [Setting Body, Status Code and Headers](#setting-body-status-code-and-headers)
         * [Streaming Responses](#streaming-responses)
         * [Logging](#logging)
         * [Mime Types](#mime-types)
-        * [Generating URLs](#generating-urls)
-        * [Browser Redirect](#browser-redirect)
+        * [ URLs Generating](#generating-urls)
+        * [Browser റീഡിറക്ട് ചെയ്യുക  ](#browser-redirect)
         * [Cache Control](#cache-control)
         * [Sending Files](#sending-files)
         * [Accessing the Request Object](#accessing-the-request-object)
-        * [Attachments](#attachments)
-        * [Dealing with Date and Time](#dealing-with-date-and-time)
-        * [Looking Up Template Files](#looking-up-template-files)
+        * [അറ്റാച്മെന്റ്സ് ](#attachments)
+        * [ദിവസവും സമയവും ഡീൽ ചെയ്യക ](#dealing-with-date-and-time)
+        * [Template Files നോക്കുന്നു ](#looking-up-template-files)
     * [Configuration](#configuration)
         * [Configuring attack protection](#configuring-attack-protection)
         * [Available Settings](#available-settings)
     * [Environments](#environments)
-    * [Error Handling](#error-handling)
-        * [Not Found](#not-found)
-        * [Error](#error)
+    * [ കൈകാര്യം ചെയ്യുക ](#error-handling)
+        * [കണ്ടെത്താൻ ആയില്ല ](#not-found)
+        * [തെറ്റ്](#error)
     * [Rack Middleware](#rack-middleware)
-    * [Testing](#testing)
+    * [ടെസ്റ്റ് ചെയ്യുക ](#testing)
     * [Sinatra::Base - Middleware, Libraries, and Modular Apps](#sinatrabase---middleware-libraries-and-modular-apps)
         * [Modular vs. Classic Style](#modular-vs-classic-style)
         * [Serving a Modular Application](#serving-a-modular-application)
@@ -121,10 +119,10 @@ pick up if available.
         * [Delegation Scope](#delegation-scope)
     * [Command Line](#command-line)
         * [Multi-threading](#multi-threading)
-    * [Requirement](#requirement)
+    * [ആവശ്യങ്ങൾ ](#requirement)
     * [The Bleeding Edge](#the-bleeding-edge)
         * [With Bundler](#with-bundler)
-    * [Versioning](#versioning)
+    * [വേർഷൻ ചെയ്യുക ](#versioning)
     * [Further Reading](#further-reading)
 
 ## Routes
@@ -132,7 +130,7 @@ pick up if available.
 In Sinatra, a route is an HTTP method paired with a URL-matching pattern.
 Each route is associated with a block:
 
-```ruby
+```റൂബി
 get '/' do
   .. show something ..
 end
@@ -166,10 +164,9 @@ unlink '/' do
 end
 ```
 
-Routes are matched in the order they are defined. The first route that
-matches the request is invoked.
+റൂട്സ് മാച്ച് ചെയ്യാനാ രീതിയില് ആണ് അത് നിർവചിക്കുന്നത് . ഏത് റിക്വസ്റ്റ് ആണോ റൂട്ട് ആയി ചേരുന്നത് ആ റൂട്ട് ആണ് വിളിക്കപെടുക .
 
-Routes with trailing slashes are different from the ones without:
+ട്രെയ്ലറിങ് സ്ലാഷ്‌സ് ഉള്ള റൂട്സ് അത് ഇല്ലാത്തതിൽ നിന്ന് വ്യത്യാസം ഉള്ളത് ആണ് :
 
 ```ruby
 get '/foo' do
@@ -188,8 +185,6 @@ get '/hello/:name' do
 end
 ```
 
-You can also access named parameters via block parameters:
-
 ```ruby
 get '/hello/:name' do |n|
   # matches "GET /hello/foo" and "GET /hello/bar"
@@ -198,9 +193,9 @@ get '/hello/:name' do |n|
   "Hello #{n}!"
 end
 ```
+റൂട്ട് പാട്ടേഴ്സിൽ പേരുള്ള splat ഉണ്ടാകാറുണ്ട് അതിനെ 'params['splat']' array ഉപയോഗിച്ച ഉപയോഗപ്പെടുത്താവുന്നത് ആണ്  
 
-Route patterns may also include splat (or wildcard) parameters, accessible
-via the `params['splat']` array:
+
 
 ```ruby
 get '/say/*/to/*' do
@@ -222,7 +217,7 @@ get '/download/*.*' do |path, ext|
 end
 ```
 
-Route matching with Regular Expressions:
+റെഗുലർ expressions  :
 
 ```ruby
 get /\/hello\/([\w]+)/ do
@@ -230,7 +225,7 @@ get /\/hello\/([\w]+)/ do
 end
 ```
 
-Or with a block parameter:
+ബ്ലോക്ക് പരാമീറ്റർസ് ഉള്ള റൂട്ട് മാച്ചിങ് :
 
 ```ruby
 get %r{/hello/([\w]+)} do |c|
@@ -239,15 +234,15 @@ get %r{/hello/([\w]+)} do |c|
 end
 ```
 
-Route patterns may have optional parameters:
+
 
 ```ruby
 get '/posts/:format?' do
   # matches "GET /posts/" and any extension "GET /posts/json", "GET /posts/xml" etc
 end
 ```
+റൂട്ട്  പാറ്റെൺസ് ഇത് query  പരാമീറ്റർസ്  ഉണ്ടാകാം :
 
-Routes may also utilize query parameters:
 
 ```ruby
 get '/posts' do
@@ -257,10 +252,8 @@ get '/posts' do
   # uses title and author variables; query is optional to the /posts route
 end
 ```
+അതുപോലെ നിങ്ങൾ പാത ട്രവേഴ്സല് അറ്റാച്ച് പ്രൊട്ടക്ഷൻ (#configuring-attack-protection) ഡിസബിലെ ചെയ്തട്ടില്ലെങ്കിൽ റെക്‌സ് പാത മോഡിഫിയ ചെയ്യണത്തിനു മുൻപ് അത് മാച്ച് ചെയ്യപ്പെടും
 
-By the way, unless you disable the path traversal attack protection (see
-[below](#configuring-attack-protection)), the request path might be modified before
-matching against your routes.
 
 You may customize the [Mustermann](https://github.com/sinatra/mustermann#readme)
 options used for a given route by passing in a `:mustermann_opts` hash:
@@ -271,15 +264,11 @@ get '\A/posts\z', :mustermann_opts => { :type => :regexp, :check_anchors => fals
   "If you match an anchored pattern clap your hands!"
 end
 ```
+ഇത്  [condition](#conditions), പോലെ തോന്നുമെങ്കിലും ഇ ഒപ്റേൻസ് global `:mustermann_opts`  ആയി മെർജ് ചെയ്യപ്പെട്ടിരിക്കുന്നു
 
-It looks like a [condition](#conditions), but it isn't one! These options will
-be merged into the global `:mustermann_opts` hash described
-[below](#available-settings).
+## കണ്ടിഷൻസ്
 
-## Conditions
-
-Routes may include a variety of matching conditions, such as the user agent:
-
+യൂസർ അഗെന്റ്റ് പോലുള്ള മാച്ചിങ്  റൂട്സ് ഇത് അടങ്ങി ഇരിക്കുന്നു
 ```ruby
 get '/foo', :agent => /Songbird (\d\.\d)[\d\/]*?/ do
   "You're using Songbird version #{params['agent'][0]}"
@@ -290,8 +279,7 @@ get '/foo' do
 end
 ```
 
-Other available conditions are `host_name` and `provides`:
-
+ ഇതുപോലുള്ള വേറെ കണ്ടിഷൻസ് ആണ് host_name , provides
 ```ruby
 get '/', :host_name => /^admin\./ do
   "Admin Area, Access denied!"
@@ -305,10 +293,9 @@ get '/', :provides => ['rss', 'atom', 'xml'] do
   builder :feed
 end
 ```
-`provides` searches the request's Accept header.
+`provides ` ആക്‌സെപ്റ് ഹെൽഡർസ് നെ അന്വഷിക്കുന്നു   
 
-You can easily define your own conditions:
-
+ നിങ്ങളുടെ കണ്ടിഷൻസ് ഇനി എളുപ്പത്തിൽ ഉണ്ടാക്കാൻ സഹായിക്കുന്നു
 ```ruby
 set(:probability) { |value| condition { rand <= value } }
 
@@ -321,7 +308,7 @@ get '/win_a_car' do
 end
 ```
 
-For a condition that takes multiple values use a splat:
+splat ഉപയോഗിച്ച പലതരത്തിൽ ഉള്ള കണ്ടിഷൻസ് ഉണ്ടാക്കാൻ സാധിക്കുന്നു :
 
 ```ruby
 set(:auth) do |*roles|   # <- notice the splat here
@@ -343,24 +330,20 @@ end
 
 ## Return Values
 
-The return value of a route block determines at least the response body
-passed on to the HTTP client, or at least the next middleware in the
-Rack stack. Most commonly, this is a string, as in the above examples.
-But other values are also accepted.
 
-You can return any object that would either be a valid Rack response, Rack
-body object or HTTP status code:
 
-* An Array with three elements: `[status (Integer), headers (Hash), response
+
+റൂട്ട് ബ്ലോക്കിന്റെ  റിട്ടേൺ വാല്യൂ HTTP client യിലേക്ക് കടത്തിവിടുന്ന രേസ്പോൻസ് ബോഡിയെ തീരുമാനിക്കുന്നു. സാധാരണയായി ഇത് ഒരു സ്ട്രിംഗ് ആണ്. പക്ഷെ മറ്റു വാല്യൂകളെയും ഇത് സ്വീകരിക്കും
+
+* മൂന്ന് എലെമെന്റ്സ് ഉള്ള അറേ : `[status (Integer), headers (Hash), response
   body (responds to #each)]`
-* An Array with two elements: `[status (Integer), response body (responds to
+* രണ്ട് എലെമെന്റ്സ് ഉള്ള അറേ : `[status (Integer), response body (responds to
   #each)]`
 * An object that responds to `#each` and passes nothing but strings to
   the given block
-* A Integer representing the status code
+* Integer സ്റ്റാറ്റസ് കോഡിനെ കാണിക്കുന്നു
 
-That way we can, for instance, easily implement a streaming example:
-
+ഇത്  നമക്ക് സ്ട്രീമിംഗ് ഉദാഹരണങ്ങൾ ഉണ്ടാക്കാം
 ```ruby
 class Stream
   def each
@@ -371,15 +354,11 @@ end
 get('/') { Stream.new }
 ```
 
-You can also use the `stream` helper method ([described below](#streaming-responses)) to reduce
-boiler plate and embed the streaming logic in the route.
+`stream` helper' ഉപയോഗിച്ച([described below](#streaming-responses))റൂട്ട് ഇലെ ബോയ്ലർ പ്ലേറ്റ്സ് ഇനി കുറക്കാം
 
 ## Custom Route Matchers
 
-As shown above, Sinatra ships with built-in support for using String
-patterns and regular expressions as route matches. However, it does not
-stop there. You can easily define your own matchers:
-
+മുകളിൽ കാണിച്ചിരിക്കുന്ന പോലെ , സിനാട്ര ഉപയോഗിച്ച String patterns, regular expressions  കൈകാര്യം ചെയ്യാം  മാത്രമല്ല നിങ്ങളുടെ സ്വന്തം matchers  ഉം ഉണ്ടാക്കാം
 ```ruby
 class AllButPattern
   Match = Struct.new(:captures)
@@ -403,8 +382,7 @@ get all_but("/index") do
 end
 ```
 
-Note that the above example might be over-engineered, as it can also be
-expressed as:
+ഇതിനെ ഇങ്ങനെയും കാണിക്കാം
 
 ```ruby
 get // do
@@ -423,14 +401,15 @@ end
 
 ## Static Files
 
-Static files are served from the `./public` directory. You can specify
-a different location by setting the `:public_folder` option:
+സ്റ്റാറ്റിക് ഫിലെസ്  `./public`  എന്ന ഡയറക്ടറി ഇത് ആണ് ഉണ്ടാകുക
+നിങ്ങൾക്ക് `:public_folder` വഴി വേറെ പാത ഉണ്ടാക്കാം
+
 
 ```ruby
 set :public_folder, File.dirname(__FILE__) + '/static'
 ```
 
-Note that the public directory name is not included in the URL. A file
+URL ഇളിൽ ഡയറക്ടറി പാത ഉണ്ടാകില്ല .  A file
 `./public/css/style.css` is made available as
 `http://example.com/css/style.css`.
 
@@ -439,8 +418,7 @@ Use the `:static_cache_control` setting (see [below](#cache-control)) to add
 
 ## Views / Templates
 
-Each template language is exposed via its own rendering method. These
-methods simply return a string:
+എല്ലാ  ടെമ്പ്ലേറ്റ് ഭാഷയും അതിന്റെ സ്വതം റെൻഡറിങ് മെതോഡിൽ ആണ് പുറത്തു കാണപ്പെടുക. ഇത് ഒരു സ്ട്രിംഗ് ഇനി റിട്ടേൺ ചെയ്യും
 
 ```ruby
 get '/' do
@@ -450,8 +428,7 @@ end
 
 This renders `views/index.erb`.
 
-Instead of a template name, you can also just pass in the template content
-directly:
+ടെമ്പ്ലേറ്റ് ഇന്റെ പേരിനു പകരം നിങ്ങൾക്ക് ടെപ്ലേറ്റ് ഇന്റെ കോൺടെന്റ് കടത്തി വിടാം
 
 ```ruby
 get '/' do
@@ -460,8 +437,7 @@ get '/' do
 end
 ```
 
-Templates take a second argument, the options hash:
-
+ടെമ്പ്ലേറ്റ് മറ്റൊരു അർജുമെന്റിനെ കടത്തി വിടുന്നു
 ```ruby
 get '/' do
   erb :index, :layout => :post
@@ -471,8 +447,7 @@ end
 This will render `views/index.erb` embedded in the
 `views/post.erb` (default is `views/layout.erb`, if it exists).
 
-Any options not understood by Sinatra will be passed on to the template
-engine:
+സിനാട്ര ക്ക് മനസ്സിലാകാത്ത  ടെമ്പ്ലേറ്റ് ഇനി ടെമ്പ്ലേറ്റ് എന്ജിനിലേക്ക് കടത്തി വിടും :
 
 ```ruby
 get '/' do
@@ -480,7 +455,7 @@ get '/' do
 end
 ```
 
-You can also set options per template language in general:
+നിങ്ങൾക്ക് ഓപ്ഷണൽ ആയി ലാംഗ്വേജ് ജനറലിൽ സെറ്റ് ചെയ്യാൻ കഴിയും :
 
 ```ruby
 set :haml, :format => :html5
@@ -490,7 +465,7 @@ get '/' do
 end
 ```
 
-Options passed to the render method override options set via `set`.
+ഉപയോഗിച്ച റെൻഡർ മെതോഡിൽ ഒപ്റേൻസ് പാസ് ചെയ്യാൻ പാട്ടും `set`.
 
 Available Options:
 
@@ -611,15 +586,13 @@ get('/') { markdown :index }
   <tr>
     <td>Dependency</td>
     <td>
-      <a href="https://github.com/jeremyevans/erubi" title="erubi">erubi</a>
-      or <a href="http://www.kuwata-lab.com/erubis/" title="erubis">erubis</a>
+      <a href="http://www.kuwata-lab.com/erubis/" title="erubis">erubis</a>
       or erb (included in Ruby)
     </td>
   </tr>
   <tr>
     <td>File Extensions</td>
-    <td><tt>.erb</tt>, <tt>.rhtml</tt> or <tt>.erubi</tt> (Erubi only)
- or <tt>.erubis</tt> (Erubis only)</td>
+    <td><tt>.erb</tt>, <tt>.rhtml</tt> or <tt>.erubis</tt> (Erubis only)</td>
   </tr>
   <tr>
     <td>Example</td>
